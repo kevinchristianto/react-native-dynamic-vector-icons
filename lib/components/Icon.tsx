@@ -14,6 +14,7 @@ interface IconProps {
     | "Zocial"
     | "Octicons"
     | "SimpleLineIcons"
+    | "Feather"
     | "Fontisto";
   name: string;
   size?: number;
@@ -42,6 +43,19 @@ const Icon = (props: IconProps): JSX.Element => {
       const Entypo = require("react-native-vector-icons/Entypo").default;
       return (
         <Entypo
+          name={name}
+          size={size}
+          style={style}
+          color={color}
+          onPress={onPress}
+        />
+      );
+    }
+    
+    case "Feather": {
+      const Feather = require("react-native-vector-icons/Feather").default;
+      return (
+        <Feather
           name={name}
           size={size}
           style={style}
